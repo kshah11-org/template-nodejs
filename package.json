@@ -1,0 +1,39 @@
+{
+  "name": "template-nodejs",
+  "version": "1.0.0",
+  "description": "node js template",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:unit:watch": "jest --watchAll",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*": "prettier --write",
+    "*.js": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshah11/template-nodejs.git"
+  },
+  "author": "Kush Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kshah11/template-nodejs/issues"
+  },
+  "homepage": "https://github.com/kshah11/template-nodejs#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.0",
+    "jest": "^28.1.1",
+    "lint-staged": "^13.0.2",
+    "prettier": "^2.7.1"
+  }
+}

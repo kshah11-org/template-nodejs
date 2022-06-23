@@ -1,0 +1,26 @@
+{
+  "Todo": {
+    "scope": "markdown",
+    "prefix": ["todo", "warning"],
+    "body": "⚠",
+    "description": "Warning emoji"
+  },
+  "In progress": {
+    "scope": "markdown",
+    "prefix": ["wip", "working"],
+    "body": "🚧",
+    "description": "In progress emoji"
+  },
+  "Done": {
+    "scope": "markdown",
+    "prefix": ["ok", "done"],
+    "body": "✅",
+    "description": "Done emoji"
+  },
+  "Error": {
+    "scope": "markdown",
+    "prefix": ["err", "error"],
+    "body": "❌",
+    "description": "Error emoji"
+  }
+}
