@@ -8,7 +8,7 @@ echo "Template is ${template}"
 gh repo create kshah11/${project} --template="${template}" --public
 echo "Succesfully initialized ${project}"
 cd ../
-echo "Navigated one level up"
+echo "Navigated to parent folder"
 echo "Cloning Repo ${project}"
 gh repo clone kshah11/${project} ${project}
 echo "Repo Cloned"
