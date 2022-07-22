@@ -22,7 +22,7 @@ jq '.repository.url = "git+'${repo}'"' package.json > "$tmp" && mv "$tmp" packag
 jq '.bugs.url = "https://github.com/kshah11/'${project}'/issues"' package.json > "$tmp" && mv "$tmp" package.json
 jq '.homepage = "https://github.com/kshah11/'${project}'#readme"' package.json > "$tmp" && mv "$tmp" package.json
 echo "Package.json file updated relevant urls with value ${project}"
-# nvm use
+nvm use
 npm install
 git add .
 git commit -m "feat: update Package.json file"
