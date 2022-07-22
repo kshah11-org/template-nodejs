@@ -27,3 +27,6 @@ npm install
 git add .
 git commit -m "feat: update Package.json file"
 git push
+echo "Repo URL: ${repo}"
+echo "Opening project in VSCode..."
+code .
