@@ -4,6 +4,7 @@
 .gitignore
 .husky/*
 .secrets.baseline
+.nvmrc
 
 # Logs
 logs
