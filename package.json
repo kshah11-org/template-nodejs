@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "test:unit:watch": "jest --watchAll",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sonarcloud": "npx sonar-scanner",
+    "snyk": "npx snyk test"
   },
   "lint-staged": {
     "*": "prettier --write",
@@ -35,6 +37,8 @@
     "jest": "^28.1.1",
     "lint-staged": "^13.0.2",
     "prettier": "^2.7.1",
-    "prettier-plugin-sh": "^0.12.6"
+    "prettier-plugin-sh": "^0.12.6",
+    "snyk": "^1.981.0",
+    "sonarqube-scanner": "^2.8.1"
   }
 }

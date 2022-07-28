@@ -5,6 +5,8 @@
 .husky/*
 .secrets.baseline
 .nvmrc
+.env.sample
+sonar-project.properties
 
 # Logs
 logs
