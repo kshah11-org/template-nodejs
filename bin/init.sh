@@ -22,11 +22,22 @@ jq '.repository.url = "git+'${repo}'"' package.json > "$tmp" && mv "$tmp" packag
 jq '.bugs.url = "https://github.com/kshah11/'${project}'/issues"' package.json > "$tmp" && mv "$tmp" package.json
 jq '.homepage = "https://github.com/kshah11/'${project}'#readme"' package.json > "$tmp" && mv "$tmp" package.json
 echo "Package.json file updated relevant urls with value ${project}"
+sed -i '' "/sonar.projectKey=/ s/=.*/=kush-${project}/" sonar-project.properties
+sed -i '' "/sonar.projectName=/ s/=.*/=${project}/" sonar-project.properties
+echo "Sonar properties file updated project key and name with value ${project}"
+export NVM_DIR=$HOME/.nvm
+source $NVM_DIR/nvm.sh
 nvm use
 npm install
 git add .
 git commit -m "feat: update Package.json file"
 git push
+npx snyk monitor
+npm run sonarcloud
 echo "Repo URL: ${repo}"
 echo "Opening project in VSCode..."
 code .
+
+# Todo:
+# 1. Error during SonarScanner execution - SONAR_TOKEN var cant be read
+# snyk token isnt needed..?
