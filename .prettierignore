@@ -5,6 +5,7 @@
 .husky/*
 .secrets.baseline
 .nvmrc
+.env.sample
 
 # Logs
 logs
