@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - lts/*
+
+jobs:
+  include:
+    - stage: Quality checks
+      env:
+        - job_name = Quality checks
+      script:
+        - npx lint-staged
+        - detect-secrets-hook --baseline .secrets.baseline $(git diff --cached --name-only)
+        - npm run snyk
+
+    - stage: Code testing
+      env:
+        - job_name = Code testing
+      script:
+        - npm run test
+        - npm run sonarcloud
