@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Authorizing GitHub"
 gh auth login
 echo "Authorized GitHub"
@@ -25,19 +26,14 @@ echo "Package.json file updated relevant urls with value ${project}"
 sed -i '' "/sonar.projectKey=/ s/=.*/=kush-${project}/" sonar-project.properties
 sed -i '' "/sonar.projectName=/ s/=.*/=${project}/" sonar-project.properties
 echo "Sonar properties file updated project key and name with value ${project}"
-export NVM_DIR=$HOME/.nvm
-source $NVM_DIR/nvm.sh
+# export NVM_DIR=$HOME/.nvm
+# source $NVM_DIR/nvm.sh
 nvm use
 npm install
+npx snyk monitor
 git add .
 git commit -m "feat: update Package.json file"
 git push
-npx snyk monitor
-npm run sonarcloud
 echo "Repo URL: ${repo}"
 echo "Opening project in VSCode..."
 code .
-
-# Todo:
-# 1. Error during SonarScanner execution - SONAR_TOKEN var cant be read
-# snyk token isnt needed..?
