@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+source .env
 npm test
 npm run snyk
-npm run sonarcloud
+sonar-scanner -D sonar.login=$SONAR_TOKEN 
