@@ -15,6 +15,13 @@ echo "Navigated to parent folder"
 echo "Cloning Repo ${project}"
 gh repo clone ${organisation}/${project} ${project}
 echo "Repo Cloned"
+FILE=.env
+if [ -f "$FILE" ]; then
+  echo "Copying snyk and sonar envs"
+  cp ./template-nodejs/${FILE} ./${project}/
+else
+  echo "Env file not found."
+fi
 cd ${project}
 repo=$(git remote get-url --push origin)
 tmp=$(mktemp)
