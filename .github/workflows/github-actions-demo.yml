@@ -34,4 +34,4 @@ jobs:
       - name: Install modules
         run: npm install
       - name: Run ESLint
-        run: npx lint-staged
+        run: npm run lint
