@@ -24,6 +24,8 @@ jobs:
           fetch-depth: 0
       - name: Install modules
         run: npm install
+      - name: Security check
+        run: npm run snyk
       - name: Run tests
         run: npm test
       - name: Run ESLint
