@@ -5,7 +5,7 @@ echo "Authorized GitHub"
 echo "Enter Project name:"
 read project
 read -p "Organisation [kshah11-org]: " organisation
-organisation=${username:-kshah11-org}
+organisation=${organisation:-kshah11-org}
 template=$(git remote get-url --push origin)
 echo "Template is ${template}"
 gh repo create ${organisation}/${project} --template="${template}" --public
